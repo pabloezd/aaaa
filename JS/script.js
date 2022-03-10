@@ -76,19 +76,19 @@ for (let i = 0; i < cantidadProductosDistintos; i++){
 }
 
 //Metodo para verificar por alert si tenemos determinado producto en nuestro array
-let chequearProducto = prompt("Verifique si tenemos el producto")
-alert(allProducts.includes(chequearProducto))
+let chequearProducto = prompt("Verifique si tenemos el producto");
+alert(allProducts.includes(chequearProducto));
 
 //Encontrar si tenemos el accesorio con find
-const busqueda = accesorios.find((el) => el.nombre === "Disco de corte")
-console.log(busqueda)
+const busqueda = accesorios.find((el) => el.nombre === "Disco de corte");
+console.log(busqueda);
 
 //Encontrar si tenemos el accesorio con filter
-const filtrar = accesorios.filter((el) => el.precio <= 200)
-console.log(filtrar)
+const filtrar = accesorios.filter((el) => el.precio <= 200);
+console.log(filtrar);
 
 //DOM
-let h1 = document.getElementById("nombreFerreteria");
+/*let h1 = document.getElementById("nombreFerreteria");
 console.log(h1.innerHTML);
 
 let marca = document.getElementsByClassName("marca");
@@ -111,3 +111,20 @@ contenedor.innerHTML = `<p> Nro ID: ${repuesto.id}</p>
                             <br>`;
 document.body.appendChild(contenedor);
 }
+*/
+
+//EVENTOS
+let boton = 
+document.getElementById("15");
+boton.addEventListener("click", respuestaClick);
+function respuestaClick(){
+    alert("Ha obtenido un 15% de descuento en su compra " + saludarUsuario);
+}
+
+
+let subs = document.getElementsByClassName("form-control")[0];
+subs.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        alert("Se ha suscrito a nuestro Newsletter con éxito " + saludarUsuario)
+    }
+});
