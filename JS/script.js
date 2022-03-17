@@ -1,4 +1,4 @@
-let saludarUsuario = prompt("Por favor ingrese su nombre");
+/*let saludarUsuario = prompt("Por favor ingrese su nombre");
 let emailUsuario = prompt("Por favor ingrese su correo electrónico");
 alert("Bienvenido/a a nuestra Ferretería, " + saludarUsuario);
 
@@ -6,6 +6,7 @@ function registroUsuario(nombre, email) {
     console.log("Ingresó: " + nombre + " " + ", y su email es: " + email);
 }
 registroUsuario(saludarUsuario, emailUsuario);
+*/
 
 function Producto(nombre, stock, precio){
     this.nombre = nombre;
@@ -42,7 +43,7 @@ function stockSuficiente(cantidad, precio){
 function stockQueda(producto, stock){
     console.log("Stock Restante " + producto + ": " + stock);
 }
-
+/*
 let cantidadProductosDistintos = parseInt(prompt("Por favor, ingrese la cantidad de productos distintos a adquirir"));
 
 //Ciclo 
@@ -87,8 +88,9 @@ console.log(busqueda);
 const filtrar = accesorios.filter((el) => el.precio <= 200);
 console.log(filtrar);
 
+
 //DOM
-/*let h1 = document.getElementById("nombreFerreteria");
+let h1 = document.getElementById("nombreFerreteria");
 console.log(h1.innerHTML);
 
 let marca = document.getElementsByClassName("marca");
@@ -118,13 +120,74 @@ let boton =
 document.getElementById("15");
 boton.addEventListener("click", respuestaClick);
 function respuestaClick(){
-    alert("Ha obtenido un 15% de descuento en su compra " + saludarUsuario);
+    console.log("Ha obtenido un 15% de descuento en su compra ");
 }
 
 
 let subs = document.getElementsByClassName("form-control")[0];
 subs.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
-        alert("Se ha suscrito a nuestro Newsletter con éxito " + saludarUsuario)
+        console.log("Se ha suscrito a nuestro Newsletter con éxito ")
     }
+});
+
+let nuevoIngreso = 
+document.getElementById("d1");
+nuevoIngreso.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        console.log(document.getElementById("d1").value)
+        let saludo = document.getElementById("holis");
+        console.log(saludo.innerText);
+        saludo.innerText = saludo.innerText + " Bienvenido a nuestra Ferretería " + nuevoIngreso.value;
+    }
+});
+
+let nuevoEmail = 
+document.getElementById("d2");
+nuevoEmail.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        console.log(document.getElementById("d2").value)
+    }
+});
+
+let comproa = 
+document.getElementById("d3");
+comproa.addEventListener("keyup", function(event) {
+    if (event.key <= 999) {
+        console.log(document.getElementById("d3").value)
+        let tota = document.getElementById("totala");
+        console.log(tota.innerText);
+        tota.innerText = tota.innerText + " El total de su compra es: $  " + (comproa.value * listaProd[0].precio);
+    }
+    else {tota = document.getElementById("totala");
+    console.log(tota.innerText);
+    tota.innerText = tota.innerText + " Por favor ingrese un numero inferior a 999  " }
+});
+
+let compros = 
+document.getElementById("d4");
+compros.addEventListener("keyup", function(event) {
+    if (event.key <= 999) {
+        console.log(document.getElementById("d4").value)
+        let tots = document.getElementById("totals");
+        console.log(tots.innerText);
+        tots.innerText = tots.innerText + " El total de su compra es: $  " + (compros.value * listaProd[1].precio);
+    }
+    else {tots = document.getElementById("totals");
+    console.log(tots.innerText);
+    tots.innerText = tots.innerText + " Por favor ingrese un numero inferior a 999  " }
+});
+
+let comprot = 
+document.getElementById("d5");
+comprot.addEventListener("keyup", function(event) {
+    if (event.key <= 999) {
+        console.log(document.getElementById("d5").value)
+        let tott = document.getElementById("totalt");
+        console.log(tott.innerText);
+        tott.innerText = tott.innerText + " El total de su compra es: $  " + (comprot.value * listaProd[2].precio);
+    }
+    else {tott = document.getElementById("totalt");
+    console.log(tott.innerText);
+    tott.innerText = tott.innerText + " Por favor ingrese un numero inferior a 999  " }
 });
