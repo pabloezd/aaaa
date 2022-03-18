@@ -14,9 +14,9 @@ function Producto(nombre, stock, precio){
     this.precio = precio;
 }
 //PRODUCTOS
-const prod1 = new Producto ("Amoladora", 10, 500);
-const prod2 = new Producto ("Sierra", 15, 600);
-const prod3 = new Producto ("Taladro", 30, 450);
+const prod1 = new Producto (" Amoladora", 10, 500);
+const prod2 = new Producto (" Sierra", 15, 600);
+const prod3 = new Producto (" Taladro", 30, 450);
 
 const listaProd = [prod1, prod2, prod3]
 const allProducts = [listaProd[0].nombre, listaProd[1].nombre, listaProd[2].nombre]
@@ -191,3 +191,28 @@ comprot.addEventListener("keyup", function(event) {
     console.log(tott.innerText);
     tott.innerText = tott.innerText + " Por favor ingrese un numero inferior a 999  " }
 });
+
+//Local Storage y JSON
+
+localStorage.setItem ('bienvenida', 'Bienvenido a Ferretería PALO!');
+let welcome = localStorage.getItem('bienvenida');
+console.log(welcome);
+
+localStorage.setItem ('sugeridos', 'Te sugerimos los siguientes productos para tu proyecto:  ' + allProducts);
+let siempre = localStorage.getItem('sugeridos');
+
+
+let proy = 
+document.getElementById("d6");
+proy.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        console.log(document.getElementById("d6").value)
+        let sugs = document.getElementById("proyecto");
+        console.log(sugs.innerText);
+        sugs.innerText = sugs.innerText + siempre
+    }
+});
+
+const enJSON  = JSON.stringify(accesorios);
+console.log(enJSON);
+
