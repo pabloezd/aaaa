@@ -1,13 +1,3 @@
-/*let saludarUsuario = prompt("Por favor ingrese su nombre");
-let emailUsuario = prompt("Por favor ingrese su correo electrónico");
-alert("Bienvenido/a a nuestra Ferretería, " + saludarUsuario);
-
-function registroUsuario(nombre, email) {
-    console.log("Ingresó: " + nombre + " " + ", y su email es: " + email);
-}
-registroUsuario(saludarUsuario, emailUsuario);
-*/
-
 function Producto(nombre, stock, precio){
     this.nombre = nombre;
     this.stock = stock;
@@ -35,85 +25,6 @@ const repuestos = [
     {id: 3, nombre: "Carbones", precio: 20},
     {id: 4, nombre: "Switch", precio: 40},
 ]
-
-// Funciones para ahorrar codigo
-function stockSuficiente(cantidad, precio){
-    alert("El total de su compra es de $" + cantidad * precio);
-}
-function stockQueda(producto, stock){
-    console.log("Stock Restante " + producto + ": " + stock);
-}
-/*
-let cantidadProductosDistintos = parseInt(prompt("Por favor, ingrese la cantidad de productos distintos a adquirir"));
-
-//Ciclo 
-for (let i = 0; i < cantidadProductosDistintos; i++){
-    
-    let productoElegido = prompt("Por favor, ingrese el producto que está buscando");
-    let cantidadCompra = parseInt(prompt("Por favor, también ingrese la cantidad de compra"));
-    
-    
-    if ((productoElegido === listaProd[0].nombre) && (cantidadCompra <= listaProd[0].stock)){
-        stockSuficiente(cantidadCompra, listaProd[0].precio); 
-        let stockRestante1 = listaProd[0].stock - cantidadCompra;
-        stockQueda(listaProd[0].nombre, stockRestante1);
-    }
-    
-    else if ((productoElegido === listaProd[1].nombre) && (cantidadCompra <= listaProd[1].stock)){
-        stockSuficiente(cantidadCompra, listaProd[1].precio); 
-        let stockRestante2 = listaProd[1].stock - cantidadCompra;
-        stockQueda(listaProd[1].nombre, stockRestante2);
-    }
-    
-    else if ((productoElegido === listaProd[2].nombre) && (cantidadCompra <= listaProd[2].stock)){
-        stockSuficiente(cantidadCompra, listaProd[2].precio); 
-        let stockRestante3 = listaProd[2].stock - cantidadCompra;
-        stockQueda(listaProd[2].nombre, stockRestante3);
-    }
-
-    else{
-        alert("No contamos con ese producto o no tenemos stock disponible. Por favor elija entre Taladro, Sierra o Amoladora");
-    }
-}
-
-//Metodo para verificar por alert si tenemos determinado producto en nuestro array
-let chequearProducto = prompt("Verifique si tenemos el producto");
-alert(allProducts.includes(chequearProducto));
-
-//Encontrar si tenemos el accesorio con find
-const busqueda = accesorios.find((el) => el.nombre === "Disco de corte");
-console.log(busqueda);
-
-//Encontrar si tenemos el accesorio con filter
-const filtrar = accesorios.filter((el) => el.precio <= 200);
-console.log(filtrar);
-
-
-//DOM
-let h1 = document.getElementById("nombreFerreteria");
-console.log(h1.innerHTML);
-
-let marca = document.getElementsByClassName("marca");
-console.log(marca[0].innerHTML);
-console.log(marca[1].innerHTML);
-console.log(marca[2].innerHTML);
-
-let subtitulo = document.getElementById("subtitulo");
-console.log(subtitulo.innerText);
-subtitulo.innerText = subtitulo.innerText + " - Que estabas buscando hoy, " + saludarUsuario + "?";
-
-let spareparts = document.getElementById("spareparts");
-spareparts.innerText = "REPUESTOS CON STOCK";
-
-for (const repuesto of repuestos) {
-let contenedor = document.createElement("div");
-contenedor.innerHTML = `<p> Nro ID: ${repuesto.id}</p>
-                            <p> Nombre Repuesto: ${repuesto.nombre}</p>
-                            <p> Costo: $ ${repuesto.precio}</p>
-                            <br>`;
-document.body.appendChild(contenedor);
-}
-*/
 
 //EVENTOS
 let boton = 
@@ -150,47 +61,73 @@ nuevoEmail.addEventListener("keyup", function(event) {
     }
 });
 
-let comproa = 
+let comproamoladora = 
 document.getElementById("d3");
-comproa.addEventListener("keyup", function(event) {
+comproamoladora.addEventListener("keyup", function(event) {
     if (event.key <= 999) {
         console.log(document.getElementById("d3").value)
-        let tota = document.getElementById("totala");
+        let totamoladora = document.getElementById("totalamoladora");
         console.log(tota.innerText);
-        tota.innerText = tota.innerText + " El total de su compra es: $  " + (comproa.value * listaProd[0].precio);
+        tota.innerText = tota.innerText + " El total de su compra es: $  " + (comproamoladora.value * listaProd[0].precio);
     }
-    else {tota = document.getElementById("totala");
-    console.log(tota.innerText);
-    tota.innerText = tota.innerText + " Por favor ingrese un numero inferior a 999  " }
+    else {totamoladora = document.getElementById("totalamoladora");
+    console.log(totamoladora.innerText);
+    totamoladora.innerText = totamoladora.innerText + " Por favor ingrese un numero inferior a 999  " }
 });
 
-let compros = 
+let comprosierra = 
 document.getElementById("d4");
-compros.addEventListener("keyup", function(event) {
+comprosierra.addEventListener("keyup", function(event) {
     if (event.key <= 999) {
         console.log(document.getElementById("d4").value)
-        let tots = document.getElementById("totals");
-        console.log(tots.innerText);
-        tots.innerText = tots.innerText + " El total de su compra es: $  " + (compros.value * listaProd[1].precio);
+        let totsierra = document.getElementById("totalsierra");
+        console.log(totsierra.innerText);
+        totsierra.innerText = totsierra.innerText + " El total de su compra es: $  " + (comprosierra.value * listaProd[1].precio);
     }
-    else {tots = document.getElementById("totals");
-    console.log(tots.innerText);
-    tots.innerText = tots.innerText + " Por favor ingrese un numero inferior a 999  " }
+    else {totsierra = document.getElementById("totalssierra");
+    console.log(totsierra.innerText);
+    totsierra.innerText = totsierra.innerText + " Por favor ingrese un numero inferior a 999  " }
 });
 
-let comprot = 
+let comprotaladro = 
 document.getElementById("d5");
-comprot.addEventListener("keyup", function(event) {
+comprotaladro.addEventListener("keyup", function(event) {
     if (event.key <= 999) {
         console.log(document.getElementById("d5").value)
-        let tott = document.getElementById("totalt");
-        console.log(tott.innerText);
-        tott.innerText = tott.innerText + " El total de su compra es: $  " + (comprot.value * listaProd[2].precio);
+        let tottaladro = document.getElementById("totaltaladro");
+        console.log(tottaladro.innerText);
+        tottaladro.innerText = tottaladro.innerText + " El total de su compra es: $  " + (comprotaladro.value * listaProd[2].precio);
     }
-    else {tott = document.getElementById("totalt");
-    console.log(tott.innerText);
-    tott.innerText = tott.innerText + " Por favor ingrese un numero inferior a 999  " }
+    else {tottaladro = document.getElementById("totaltaladro");
+    console.log(tottaladro.innerText);
+    tottaladro.innerText = tottaladro.innerText + " Por favor ingrese un numero inferior a 999  " }
 });
+
+
+
+/*
+function comproX (idx,totalx,prodx){
+    let comproxx = 
+    document.getElementById(idx);
+    comproxx.addEventListener("keyup", function(event) {
+        if (event.key <= 999) {
+            console.log(document.getElementById(idx).value)
+            let totxx = document.getElementById(totalx);
+            console.log(totxx.innerText);
+            totxx.innerText = totxx.innerText + " El total de su compra es: $  " + (comproxx.value * prodx.precio);
+        }
+        else {totxx = document.getElementById(totalx);
+        console.log(totxx.innerText);
+        totxx.innerText = totxx.innerText + " Por favor ingrese un numero inferior a 999  " }
+    });
+
+}
+
+function comproX (d5, totalt, prod3);
+*/
+
+
+
 
 //Local Storage y JSON
 
