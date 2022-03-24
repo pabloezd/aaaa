@@ -67,8 +67,8 @@ comproamoladora.addEventListener("keyup", function(event) {
     if (event.key <= 999) {
         console.log(document.getElementById("d3").value)
         let totamoladora = document.getElementById("totalamoladora");
-        console.log(tota.innerText);
-        tota.innerText = tota.innerText + " El total de su compra es: $  " + (comproamoladora.value * listaProd[0].precio);
+        console.log(totamoladora.innerText);
+        totamoladora.innerText = totamoladora.innerText + " El total de su compra es: $  " + (comproamoladora.value * listaProd[0].precio);
     }
     else {totamoladora = document.getElementById("totalamoladora");
     console.log(totamoladora.innerText);
